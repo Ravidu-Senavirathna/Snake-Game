@@ -12,12 +12,20 @@ pygame.display.set_caption("Game")
 # Set up the clock for managing the frame rate
 clock = pygame.time.Clock()
 
+# Text rendering setup
+font = pygame.font.Font(None, 36)  # Use default font and size 36
+text_color = (255, 255, 255)  # White color for text
+
 
 # Player Properties
-player_pos = [400, 300]
-player_image = pygame.Surface((20, 20))
+player_pos = [400, 300] # Starting position of the player
+player_image = pygame.Surface((20, 20)) # Create a simple surface for the player
 player_image.fill((255, 0, 0))  # Red square as player
 
+
+# Score 
+score = 0  # Initialize score
+rendered_score = font.render(f"Score: {score}", True, text_color)  # Render the score text
 
 # Main game loop
 def main():
@@ -44,15 +52,18 @@ def main():
             player_pos[0] += 10
 
         
-        # Clear the screen        
-        screen.fill((0, 0, 0))  # Fill the screen with black
+        # Clear the screen
+        screen.fill((0, 0, 0))
 
         # Draw the player
         screen.blit(player_image, player_pos)
+        # Draw the score
+        screen.blit(rendered_score, (10, 10))
 
         # Update game state here
         pygame.display.flip()
-        clock.tick(60)  # Limit to 60 frames per second
+        # Limit the frame rate to 60 frames per second
+        clock.tick(60)
 
 
 if __name__ == "__main__":
