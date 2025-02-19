@@ -37,6 +37,9 @@ food_rect = pygame.Rect(food_pos[0], food_pos[1], *food_size) # Create a rect fo
 # Main game loop
 def main():
 
+    # Score 
+    score = 0  # Initialize score
+    rendered_score = font.render(f"Score: {score}", True, text_color)  # Render the score text
 
     # Game loop
     running = True
