@@ -90,8 +90,8 @@ def main():
             rendered_score = font.render(f"Score: {score}", True, text_color)
 
             # Move the food to a new random position (for simplicity, we just move it to a fixed position here)
-            food_pos[0] = random.randint(0, 790)
-            food_pos[1] = random.randint(0, 590)
+            food_pos[0] = random.randint(0, SCREEN_WIDTH - food_size[0])
+            food_pos[1] = random.randint(0, SCREEN_HEIGHT - food_size[1])
             food_rect.topleft = food_pos  # Update the food rect position
 
         # Update game state here
