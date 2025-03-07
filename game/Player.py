@@ -27,10 +27,12 @@ class Player(pygame.sprite.Sprite):
         self.player_rect.topleft = (self.x, self.y)  # Update the player's rect position
 
     def get_rect(self):
-        pass
+        return self.player_rect
     
     def get_position(self):
-        pass
+        return self.x, self.y
 
     def set_position(self, x, y):
-        pass
+        self.x = x
+        self.y = y
+        self.player_rect.topleft = (self.x, self.y)  # Update the player's rect position
