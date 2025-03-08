@@ -12,10 +12,14 @@ class Food(pygame.sprite.Sprite):
         self.food_rect = pygame.Rect(self.x, self.y, *FOOD_SIZE) # Create a rect for the food to handle collisions
 
     def draw(self, screen):
-        pass
+        food_image = pygame.Surface(FOOD_SIZE) # Create a simple surface for the food
+        food_image.fill(FOOD_COLOR)  # Green square as food
+        screen.blit(food_image, (self.x, self.y))
 
-    def move(self):
-        pass
+    def move_to_random_position(self):
+        self.x = random.randint(0, SCREEN_WIDTH - FOOD_SIZE[0])
+        self.y = random.randint(0, SCREEN_HEIGHT - FOOD_SIZE[1])
+        self.food_rect.topleft = (self.x, self.y)
 
     def get_rect(self):
         pass
