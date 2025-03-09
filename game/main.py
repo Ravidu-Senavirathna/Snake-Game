@@ -57,20 +57,17 @@ def main():
         screen_rect = screen.get_rect()
 
         # In your player update loop
-        player_rect.topleft = player_pos
-        player_rect.clamp_ip(screen_rect)
-        player_pos[0], player_pos[1] = player_rect.topleft
+        player.get_rect().topleft = player.get_position()  # Update the player's rect position
+        player.get_rect().clamp_ip(screen_rect)
+        player.set_position(*player.get_rect().topleft)
 
         # Clear the screen
-        screen.fill((0, 0, 0))
-
-        # Draw the player
-        screen.blit(player_image, player_rect)
-        # Draw the food
-        screen.blit(food_image, food_rect)
-        # Draw the score
+        screen.fill(BLACK)
+    
+        # Draw the player and food
+        player.draw(screen)
+        food.draw(screen)
         screen.blit(rendered_score, (10, 10))
-
 
         # Check for collision between player and food
         if player_rect.colliderect(food_rect):
