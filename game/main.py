@@ -1,7 +1,11 @@
 import pygame
 import random
 import os
+
 from Constants import *
+
+from Food import Food
+from Player import Player
 
 # Initialize Pygame
 pygame.init()
@@ -18,23 +22,6 @@ clock = pygame.time.Clock()
 # Text rendering setup
 font = pygame.font.Font(None, 36)  # Use default font and size 36
 text_color = WHITE  # White color for text
-
-
-# Player Properties
-player_pos = [400, 300] # Starting position of the player
-player_size = PLAYER_SIZE # Size of the player
-player_image = pygame.Surface(player_size) # Create a simple surface for the player
-player_image.fill(PLAYER_COLOR)  # Red square as player
-player_rect = pygame.Rect(player_pos[0], player_pos[1], *player_size) # Create a rect for the player to handle collisions and boundaries
-
-
-# Food Properties
-food_pos = [200, 150] # Starting position of the food
-food_size = FOOD_SIZE # Size of the food
-food_image = pygame.Surface(food_size) # Create a simple surface for the food
-food_image.fill(FOOD_COLOR)  # Green square as food
-food_rect = pygame.Rect(food_pos[0], food_pos[1], *food_size) # Create a rect for the food to handle collisions
-
 
 
 # Main game loop
