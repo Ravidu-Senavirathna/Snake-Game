@@ -70,14 +70,10 @@ def main():
         screen.blit(rendered_score, (10, 10))
 
         # Check for collision between player and food
-        if player_rect.colliderect(food_rect):
+        if player.get_rect().colliderect(food.get_rect()):
             score = score + 1
             rendered_score = font.render(f"Score: {score}", True, text_color)
-
-            # Move the food to a new random position (for simplicity, we just move it to a fixed position here)
-            food_pos[0] = random.randint(0, SCREEN_WIDTH - food_size[0])
-            food_pos[1] = random.randint(0, SCREEN_HEIGHT - food_size[1])
-            food_rect.topleft = food_pos  # Update the food rect position
+            food.move()  # Move the food to a new random position
 
         # Update game state here
         pygame.display.flip()
