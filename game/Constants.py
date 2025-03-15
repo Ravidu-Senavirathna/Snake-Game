@@ -16,7 +16,8 @@ SCREEN_HEIGHT = 600
 # Player properties
 PLAYER_SIZE = (20, 20)  # Size of the player
 PLAYER_COLOR = RED  # Red color for the player
+PLAYER_SPEED = 5  # Speed of the player
 
 # Food properties
-FOOD_SIZE = (10, 10)  # Size of the food
-FOOD_COLOR = GREEN  # Green color for the food
+POINT_SIZE = (10, 10)  # Size of the food
+POINT_COLOR = GREEN  # Green color for the food
