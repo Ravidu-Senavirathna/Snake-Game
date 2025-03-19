@@ -50,7 +50,7 @@ class Player(pygame.sprite.Sprite):
 
         player_image = pygame.Surface(PLAYER_SIZE)
         player_image.fill(PLAYER_COLOR)
-        screen.blit(player_image, (self.x, self.y))
+        screen.blit(player_image, self.player_rect)
  
 
 
@@ -61,7 +61,7 @@ class Player(pygame.sprite.Sprite):
 
         self.x += dx
         self.y += dy
-        self.player_rect.topleft = (self.x, self.y)
+        self.player_rect.center = (self.x, self.y)
 
 
 
@@ -88,4 +88,4 @@ class Player(pygame.sprite.Sprite):
 
         self.x = x
         self.y = y
-        self.player_rect.topleft = (self.x, self.y)
+        self.player_rect.center = (self.x, self.y)

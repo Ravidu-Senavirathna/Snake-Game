@@ -52,7 +52,7 @@ class Point(pygame.sprite.Sprite):
 
         point_image = pygame.Surface(POINT_SIZE)
         point_image.fill(POINT_COLOR)
-        screen.blit(point_image, (self.x, self.y))
+        screen.blit(point_image, self.point_rect)
 
 
 
@@ -62,7 +62,7 @@ class Point(pygame.sprite.Sprite):
 
         self.x = random.randint(0, SCREEN_WIDTH - POINT_SIZE[0])
         self.y = random.randint(0, SCREEN_HEIGHT - POINT_SIZE[1])
-        self.point_rect.topleft = (self.x, self.y)
+        self.point_rect.center = (self.x, self.y)
 
 
 
