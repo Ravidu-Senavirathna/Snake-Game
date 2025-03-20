@@ -26,6 +26,28 @@ def draw_grid(surface,
 
 '''Renders the given text using the specified font and color. This function is a simple wrapper around Pygame's font rendering capabilities.'''
 
-def render_text(text, font, color):
+def render_text(text, 
+                font, 
+                color):
+    
     return font.render(text, True, color)
 
+
+
+def draw_frame(screen, 
+               player, 
+               point, 
+               score_text
+               ):
+    
+    '''Draw the current game state on the screen. This function will be called every frame to update the visuals.'''
+
+    ''' Clear the screen with a black background '''
+    screen.fill(Constants.BLACK)
+    draw_grid(screen)
+
+    '''Draw the player, point and score text on the screen'''
+    player.draw(screen)
+    point.draw(screen)
+
+    screen.blit(score_text, (10, 10))
