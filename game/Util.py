@@ -22,3 +22,10 @@ def draw_grid(surface,
     for y in range(0, height, box_size):
         pygame.draw.line(surface, color, (0, y), (width, y))
 
+
+
+'''Renders the given text using the specified font and color. This function is a simple wrapper around Pygame's font rendering capabilities.'''
+
+def render_text(text, font, color):
+    return font.render(text, True, color)
+
