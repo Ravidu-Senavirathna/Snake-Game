@@ -3,6 +3,7 @@ import random
 import os
 
 import Constants
+import Util
 
 PLAYER_SPEED = Constants.PLAYER_SPEED
 
@@ -73,17 +74,7 @@ def main():
         player.set_position(*player.get_rect().center)
 
 
-
-        ''' Clear the screen with a black background '''
-        screen.fill(Constants.BLACK)
-    
-
-
-        '''Draw the player, point and score text on the screen'''
-        player.draw(screen)
-        point.draw(screen)
-        screen.blit(rendered_score, (10, 10))
-
+        Util.draw_frame(screen, player, point, rendered_score)
 
 
         '''Check for collision between player and point: 
