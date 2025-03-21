@@ -61,7 +61,7 @@ class Player(pygame.sprite.Sprite):
 
         self.x += dx
         self.y += dy
-        self.player_rect.center = (self.x, self.y)
+        self.player_rect = pygame.Rect(self.x, self.y, *PLAYER_SIZE)
 
 
 
@@ -88,4 +88,4 @@ class Player(pygame.sprite.Sprite):
 
         self.x = x
         self.y = y
-        self.player_rect.center = (self.x, self.y)
+        self.player_rect = pygame.Rect(self.x, self.y, *PLAYER_SIZE)
